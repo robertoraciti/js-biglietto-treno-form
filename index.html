@@ -32,10 +32,10 @@
   
               <label for="user-age">Fascia d'età</label> <br />
               <select name="user-age" id="user-age">
-            </div>
-              <option value="1">Minorenne</option>
-              <option value="2">Maggiorenne</option>
-              <option value="3">Over 65</option>
+                <option value="1">Minorenne</option>
+                <option value="2">Maggiorenne</option>
+                <option value="3">Over 65</option>
+              </div>
             </select>
           </div>
         </div>
@@ -43,40 +43,42 @@
           <button id="send-button" class="btn btn-primary">Genera</button>
           <button id="reset-button" type="reset" class="btn btn-warning">Annulla</button>
         </div>
-        <h2 class="mt-4">Dettaglio Passeggero</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">NOME PASSEGGERO</th>
-              <th scope="col">Offerta</th>
-              <th scope="col">Prezzo Base</th>
-              <th scope="col">Sconto</th>
-              <th scope="col">Prezzo Finale</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td id="user-name"></td>
-              <td>Biglietto Standard</td>
-              <td id="base-price"></td>
-              <td id="discount-applicated"></td>
-              <td id="final-price"></td>
-            </tr>
-            <!-- <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr> -->
-          </tbody>
-        </table>
-        <!-- <div id="final-price"></div>
-        <div id="discount-applicated"></div> -->
+
+        <section id="ticket" class="d-none">
+
+          <h2 class="mt-4">Dettaglio Passeggero</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">NOME PASSEGGERO</th>
+                <th scope="col">Offerta</th>
+                <th scope="col">Prezzo Base</th>
+                <th scope="col">Sconto</th>
+                <th scope="col">Prezzo Finale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="user-name"></td>
+                <td>Biglietto Standard</td>
+                <td id="base-price"></td>
+                <td id="discount-applicated"></td>
+                <td id="final-price"></td>
+              </tr>
+              <!-- <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr> -->
+            </tbody>
+          </table>
+        </section>
       </div>
     </div>
   </body>

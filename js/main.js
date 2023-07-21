@@ -1,38 +1,44 @@
-const userName = document.getElementById("username").value;
-
-const kiloMeters = document.getElementById("kilometers").value;
-
-console.log(typeof kiloMeters);
+const userName = document.getElementById("username");
+const kiloMeters = document.getElementById("kilometers");
 const userAge = document.getElementById("user-age");
-const unitPrice = 0.21;
-
-parseInt(userAge);
-
-const basePrice = kiloMeters * unitPrice;
-
-let ticketDiscount = 0;
-console.log(typeof ticketDiscount);
 
 const sendButton = document.getElementById("send-button");
+const resetButton = document.getElementById("reset-button");
+
+const ticketSection = document.getElementById("ticket");
+const textUserNameElement = document.getElementById("user-name");
+const textBasePriceElement = document.getElementById("base-price");
+const ticketFinalPriceElement = document.getElementById("final-price");
+const ticketDiscountAppElement = document.getElementById("discount-applicated");
+let ticketDiscount = 0;
 
 sendButton.addEventListener("click", function () {
-  if (userAge.value === "1") {
+  const userNameValue = userName.value;
+  const kiloMetersValue = parseFloat(kiloMeters.value);
+  const userAgeValue = userAge.value;
+  const unitPrice = 0.21;
+  const basePrice = kiloMetersValue * unitPrice;
+
+  if (userAgeValue == "1") {
     ticketDiscount = basePrice * 0.2;
-  } else if (userAge.value === "3") {
+  } else if (userAgeValue == "3") {
     ticketDiscount = basePrice * 0.4;
-  } else if (userAge.value == "2") {
+  } else if (userAgeValue == "2") {
     ticketDiscount = 0;
   }
 
-  const textUserName = (document.getElementById("user-name").innerHTML =
-    userName);
+  textUserNameElement.innerHTML = userNameValue;
 
-  const textBasePrice = (document.getElementById("base-price").innerHTML =
-    "€ " + basePrice);
+  textBasePriceElement.innerHTML = "€ " + basePrice.toFixed(2);
 
   const finalPrice = basePrice - ticketDiscount;
-  document.getElementById("final-price").innerHTML = "€ " + finalPrice;
+  ticketFinalPriceElement.innerHTML = "€ " + finalPrice.toFixed(2);
 
-  document.getElementById("discount-applicated").innerHTML =
-    "€ " + ticketDiscount;
+  ticketDiscountAppElement.innerHTML = "€ " + ticketDiscount.toFixed(2);
+
+  ticketSection.classList.remove("d-none");
+});
+
+resetButton.addEventListener("click", function () {
+  ticketSection.classList.add("d-none");
 });
